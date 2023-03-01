@@ -1,11 +1,11 @@
 import "./UseState.css";
 import { useState } from "react";
 
-var count = 0;
+// var count = 0;
 const UseState = () => {
   console.log(useState("light"));
   const [theme, setTheme] = useState("light");
-  let [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   return (
     <div className={theme}>
       <h1>UseState Component</h1>
@@ -24,16 +24,24 @@ const UseState = () => {
       >
         Light
       </button>
-      <button
+      {/* <button
         onClick={() => {
           return setCount(count++);
+        }}
+      >
+        Increment
+      </button> */}
+      <button
+        onClick={() => {
+          return setCount(count + 1);
+          //
         }}
       >
         Increment
       </button>
       <button
         onClick={() => {
-          return setCount(count--);
+          return setCount((prevCount) => prevCount - 1);
         }}
       >
         Decrement
